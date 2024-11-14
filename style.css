@@ -1,0 +1,6 @@
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+@font-face {
+  font-family: monaspace-neon;
+  src: url(assets/fonts/MonaspaceNeon-Regular.woff2);
+}
