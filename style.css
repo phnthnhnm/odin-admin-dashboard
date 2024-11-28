@@ -1,5 +1,3 @@
-@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
-
 @font-face {
   font-family: 'Monaspace Neon';
   src: url(assets/fonts/MonaspaceNeonVarVF.woff2) format('woff2');
@@ -8,11 +6,11 @@
 :root {
   --font-family: 'Monaspace Neon', monospace;
 
-  --color-text: #160811;
-  --color-background: #fff8f8;
-  --color-primary: #874b6d;
-  --color-secondary: #715764;
-  --color-accent: #80543c;
+  --color-text: #cdd6f4; /* Mocha text color */
+  --color-background: #1e1e2e; /* Mocha base color */
+  --color-primary: #a6e3a1; /* Mocha green accent */
+  --color-secondary: #45475a; /* Mocha surface color */
+  --color-accent: #89b4fa; /* Mocha blue accent */
 
   --pad-top: 1.5rem;
 
@@ -36,6 +34,7 @@
 body {
   height: 100vh;
   color: var(--color-text);
+  background-color: var(--color-background);
 
   display: grid;
   grid-template:
@@ -60,8 +59,8 @@ ul {
 
 nav {
   grid-area: nav;
-  background-color: color-mix(in srgb, var(--color-secondary) 9%, var(--color-background));
-  color: color-mix(in srgb, var(--color-secondary) 30%, var(--color-text));
+  background-color: var(--color-secondary);
+  color: var(--color-text);
   padding: var(--pad-top) 1rem;
   font-size: 1.3rem;
   z-index: 9;
@@ -97,7 +96,7 @@ nav .nav-link {
 }
 
 nav .nav-link:hover {
-  background-color: color-mix(in srgb, var(--color-primary) 20%, var(--color-text) 2%);
+  background-color: var(--color-primary);
 }
 
 nav .nav-list .nav-link {
@@ -146,7 +145,7 @@ header .search {
 
 header #search-bar {
   width: min(85%, 700px);
-  background-color: color-mix(in srgb, var(--color-accent), transparent 90%);
+  background-color: var(--color-accent);
   color: inherit;
   border: 0;
   border-radius: 99rem;
@@ -189,13 +188,13 @@ header button {
 
 header button:hover,
 header button:focus {
-  background-color: color-mix(in srgb, var(--color-secondary), var(--color-text) 20%);
+  background-color: var(--color-primary);
   box-shadow: var(--shadow);
 }
 
 main {
   --border-width: 10px;
-  background-color: color-mix(in srgb, var(--color-background), var(--color-accent) 5%);
+  background-color: var(--color-background);
   grid-area: main;
   overflow-y: scroll;
   padding-top: var(--pad-top);
@@ -222,7 +221,7 @@ main h2 {
 
 main p,
 main .project .icon {
-  color: color-mix(in srgb, var(--color-text), var(--color-background) 10%);
+  color: var(--color-text);
 }
 
 main p {
@@ -236,7 +235,7 @@ main p {
 }
 
 #projects .project {
-  border-left: var(--border-width) solid color-mix(in srgb, var(--color-accent) 40%, var(--color-background) 5%);
+  border-left: var(--border-width) solid var(--color-primary);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -297,7 +296,7 @@ main p {
   position: absolute;
   height: 1px;
   width: 100%;
-  background-color: color-mix(in srgb, var(--color-text), transparent 85%);
+  background-color: var(--color-secondary);
   bottom: calc(var(--mg-bottom) / -2);
 }
 
@@ -348,15 +347,15 @@ main p {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text: #eddfe4;
-    --color-background: #181115;
-    --color-primary: #fbb0d7;
-    --color-secondary: #dfbecc;
-    --color-accent: #f3ba9c;
+    --color-text: #cdd6f4;
+    --color-background: #1e1e2e;
+    --color-primary: #a6e3a1;
+    --color-secondary: #45475a;
+    --color-accent: #89b4fa;
   }
 
   header,
   .card {
-    background-color: color-mix(in srgb, var(--color-background), var(--color-text) 6%);
+    background-color: var(--color-background);
   }
 }
